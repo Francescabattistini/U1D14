@@ -14,14 +14,23 @@ function generatecelle() {
     const cella = document.createElement("div"); // creo un DIV
     cella.innerText = i; //do un valore alla cella
     cella.classList.add("cella"); //nome classe che abbiamo creato
+    cella.id = "cellaDue" + i;
     Tombola.appendChild(cella); // alla tombola attaccaci la cella
     arreyCelle.push(i);
-  }
+  } //creazione del bottone
+  const bottone = document.createElement("button"); //creo bottone
+  bottone.innerText = "Tenta la sorte"; //faccio in modo che nel bottone ci sia scritto tenta la sorte
+  const divBottone = document.getElementById("divBottone"); //selezione l'elemento con quell'id
+  divBottone.appendChild(bottone);
 }
 generatecelle();
 
-//creazione del bottone
-const bottone = document.createElement("button"); //creo bottone
-bottone.innerText = "Tenta la sorte"; //faccio in modo che nel bottone ci sia scritto tenta la sorte
-const divBottone = document.getElementById("divBottone"); //selezione l'elemento con quell'id
-divBottone.appendChild(bottone);
+//creazione dell'evento estrazione
+function estrazioneNumero() {
+  const numero = Math.floor(Math.random() * 76) + 1;
+  const cella = document.getElementById("cellaDue" + numero);
+  //genera un numero random
+  if (cella) {
+    cella.classList.add("colora");
+  }
+}
