@@ -1,10 +1,10 @@
-const form = document.getElementById("click");
+/* const form = document.getElementById("click");
 
 form.addEventListener("click", function (event) {
   // 1.Impedisce il comportamento predefinito del modulo di inviare i dati al server
   event.preventDefault();
   console.log("click");
-});
+}); */
 
 function generatecelle() {
   const arreyCelle = []; // array vuoto per creare le celle (quando lo richiamo?)
@@ -17,10 +17,11 @@ function generatecelle() {
     Tombola.appendChild(cella); // alla tombola attaccaci la cella
     arreyCelle.push(i);
   }
-
-  //creazione del bottone a estrazione
-  const bottone = document.creatElement("button"); //creo bottone
-  bottone.innertext = "Tenta la srote"; //faccio in modo che nel bottone ci sia scritto tenta la sorte
-  const divBottone = document.getElementById("divBottone"); //selezione l'elemento con quell'id
-  divBottone.appendChild();
 }
+generatecelle();
+
+//creazione del bottone
+const bottone = document.createElement("button"); //creo bottone
+bottone.innerText = "Tenta la sorte"; //faccio in modo che nel bottone ci sia scritto tenta la sorte
+const divBottone = document.getElementById("divBottone"); //selezione l'elemento con quell'id
+divBottone.appendChild(bottone);
